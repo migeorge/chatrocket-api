@@ -1,0 +1,17 @@
+language: elixir
+elixir:
+- 1.2
+otp_release:
+- 18.2
+sudo: false
+addons:
+  postgresql: '9.4'
+before_script:
+- psql -c 'create database chatrocket_test;' -U postgres
+deploy:
+  provider: heroku
+  api_key:
+    secure: cV4BPVSr+e4Ie8EDZm2lS8awGfXuUBzou1v86RRgJhSUFX+J+EP4lLg+YvEpPOEUswpQzUU6q6GW0e0em97HK4JI8bOi/Eu8bmCIUQRqK3eM0m7r6xNI1nV7utWQ7LpFajaMVrAHIBj+s7hZWkedx8pq6nOBtCkYnkP33zruvGpMdfpg9AdH1EiV7KzMc8A7lwYim1UsE1JnI6mwOxEaX8z+ZicMEJBmj/SH08y+gMVBH5LF9q88OMUhJvwF8uhCuVDagdiIdUW9LlaYp40afiM11V4e0nKAB4Mb9uTqOW7vwFFPEfWl7ipkbNz6nnYPrLKJ6sRjyo+YCVrQGnNCCxjCxU9/1KsP9/RRZ6fGt27XLHlElZVpEyWbiK2GYPxdPJGrNt9UBIf0U1oBcoLj1+O0XqAiEcRswTTxRewU1Lb948Wv/OmErXs8opODepG6qEXuzNYnCm/HfzRTBGnE0ONRjvLr4FDmta28toS5VG8zlvVoWfek1CZ7ezeE3e8Fx1pJCp5MvHIa3YAsi2a1AaxTlw+WAZftLAlXhHVESBHA2NGFBYNTSHJwHQrhigsZIQz9hs52v2Y1qW6k7tXN3Rr+zkeD15oZJQUimzrKUzkZcbGWXBpF4/DEV14GTEGjZr/fkFQfTfrlax4s9i4T0VT68pqIx7IBjPoDjmIIR/o=
+  app: chatrocket-api
+  on:
+    repo: migeorge/chatrocket-api
