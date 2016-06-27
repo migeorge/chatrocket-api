@@ -19,7 +19,7 @@ defmodule Chatrocket.Mixfile do
   def application do
     [mod: {Chatrocket, []},
      applications: [:phoenix, :phoenix_pubsub, :cowboy, :logger, :gettext,
-                    :phoenix_ecto, :postgrex]]
+                    :phoenix_ecto, :postgrex, :comeonin]]
   end
 
   # Specifies which paths to compile per environment.
@@ -36,6 +36,11 @@ defmodule Chatrocket.Mixfile do
      {:postgrex, ">= 0.0.0"},
      {:gettext, "~> 0.11"},
      {:cors_plug, "~> 1.1"},
+
+     {:comeonin, "~> 2.4"},
+     {:ja_serializer, "~> 0.9.0"},
+
+     {:guardian, "~> 0.12.0"},
      {:cowboy, "~> 1.0"}]
   end
 
